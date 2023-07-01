@@ -1,0 +1,10 @@
+function insertFootNote($content) {
+        if(!is_feed() && !is_home()) {
+                $content.= "<div class='subscribe'>";
+                $content.= "<h4>Enjoyed this article?</h4>";
+                $content.= "<p>Subscribe to our  <a href='https://feeds2.feedburner.com/WpRecipes'>RSS feed</a> and never miss a recipe!</p>";
+                $content.= "</div>";
+        }
+        return $content;
+}
+add_filter ('the_content', 'insertFootNote');
